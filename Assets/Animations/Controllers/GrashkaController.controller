@@ -10,7 +10,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: AnimationState
-    m_EventTreshold: 0
+    m_EventTreshold: 5
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 367631979846419548}
   m_Solo: 0
@@ -202,7 +202,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: idle_grashka
-  m_Speed: 0.2
+  m_Speed: 0.15
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
