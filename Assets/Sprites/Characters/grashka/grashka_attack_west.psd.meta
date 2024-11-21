@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 44
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -111,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66e06a0654cfc7f47b6a61eea0423a90
-      internalID: -1262210190
+      spriteID: f8984151660a30f45838786bcee4f8d3
+      internalID: -118647816
       vertices: []
       indices: 
       edges: []
@@ -132,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 657f324029ff39b46b9f4c7dee3fb1ce
-      internalID: 342829836
+      spriteID: 7769a2b361c680b4db13b9dcbbd82b6f
+      internalID: -995525041
       vertices: []
       indices: 
       edges: []
@@ -149,8 +149,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      grashka_attack_west_0: -1262210190
-      grashka_attack_west_1: 342829836
+      grashka_attack_west_0: -118647816
+      grashka_attack_west_1: -995525041
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f6c2165f3347c984bbb615b679c50b67
+guid: 93fa33a2d34e76243b998dd83e490497
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,12 +97,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: grashka_attack_east_0
+      name: grashka_attack_south_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 44
+        width: 32
         height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -111,19 +111,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e05764dbd774b904881a442f69180f75
-      internalID: 116120973
+      spriteID: b576cf2e69d51ab498b245c98fc51c64
+      internalID: 947986484
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grashka_attack_east_1
+      name: grashka_attack_south_1
       rect:
         serializedVersion: 2
-        x: 44
+        x: 32
         y: 0
-        width: 44
+        width: 32
         height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -132,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5fed314f714928479c95eb3f26d8cf0
-      internalID: -393931264
+      spriteID: 066f92fb504966e43882dcc2ee58cbc8
+      internalID: 492193236
       vertices: []
       indices: 
       edges: []
@@ -149,8 +149,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      grashka_attack_east_0: 116120973
-      grashka_attack_east_1: -393931264
+      grashka_attack_south_0: 947986484
+      grashka_attack_south_1: 492193236
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
