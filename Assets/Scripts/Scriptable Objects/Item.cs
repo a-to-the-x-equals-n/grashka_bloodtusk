@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 
 // Create an entry in the "Create submenu" to be able to easily create instances of the object
 [CreateAssetMenu(menuName = "Item")]

@@ -19,6 +19,8 @@ public class Player : Character
         // Get a copy of the inventory prefab and store a reference to it
         inventory = Instantiate(inventoryPrefab);
 
+        // inventory.character = this;
+
         // Start teh player off with the starting hit point value
         hitPoints.value = startingHitPoints;
 

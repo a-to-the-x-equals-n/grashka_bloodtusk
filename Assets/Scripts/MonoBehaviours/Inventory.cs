@@ -3,6 +3,11 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
+    // Reference to the current Player object to get inventory
+    // Will be set programmatically, instead of through the Unity Editor, so it is hidden in the Inspector window
+    // [HideInInspector]
+    // public Player character;
+
     // A reference to the slot prefab object; attached in the unity editor
     public GameObject slotPrefab;
 
@@ -67,7 +72,7 @@ public class Inventory : MonoBehaviour
             if (items[i] != null && items[i].itemType == itemToAdd.itemType && itemToAdd.stackable == true)
             {
                 // Increase teh quanity since it is a stackable item
-                items[i].quantity += 1;
+                items[i].quantity = items[i].quantity + 1;
 
                 // Grab a reference to the script that's in the slot (which contains a referencye to the QtyText)
                 Slot slotScript = slots[i].gameObject.GetComponent<Slot>();
