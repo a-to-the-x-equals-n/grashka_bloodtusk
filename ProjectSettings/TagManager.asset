@@ -41,6 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Water
+    uniqueID: 4033527019
+    locked: 0
   - name: Ground
     uniqueID: 2472358001
     locked: 0
@@ -49,4 +52,7 @@ TagManager:
     locked: 0
   - name: Characters
     uniqueID: 1285369215
+    locked: 0
+  - name: Elevated
+    uniqueID: 1782724077
     locked: 0
