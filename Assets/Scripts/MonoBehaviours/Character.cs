@@ -5,6 +5,15 @@ using UnityEngine;
 public abstract class Character : MonoBehaviour
 {
     // Properties common to all characters
-    public int hitPoints;
-    public int maxHitPoints;
+    public HitPoints hitPoints;
+    public float maxHitPoints;
+    public float startingHitPoints;
+
+    public enum CharacterCategory
+    { 
+        PLAYER,
+        ENEMY
+    }
+
+    public CharacterCategory characterCategory;
 }
