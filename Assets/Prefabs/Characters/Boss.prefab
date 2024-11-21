@@ -207,6 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c2e3ee1d9d11f46898a3820192334c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitPoints: 0
-  startingHitPoints: 0
+  maxHitPoints: 2
+  startingHitPoints: 2
   characterCategory: 1
+  damageStrength: 1
