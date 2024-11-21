@@ -13,11 +13,10 @@ GameObject:
   - component: {fileID: 8607340807694056405}
   - component: {fileID: 8839356145211677529}
   - component: {fileID: 3047719650151266064}
-  - component: {fileID: 8443767509666028799}
   - component: {fileID: 6123383666704767608}
   m_Layer: 8
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1285369215
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 922190474, guid: 971e5cd06303140d09428cc557990db7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -182,21 +181,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8443767509666028799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1078467729470143824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data:
-    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
-    _objectReferences: []
 --- !u!114 &6123383666704767608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,7 +188,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1078467729470143824}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da0212e57dfe946c288bb340ab1231b4, type: 3}
   m_Name: 
