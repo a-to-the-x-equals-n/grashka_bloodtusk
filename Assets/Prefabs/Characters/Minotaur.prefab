@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1450424985702492599, guid: 656751e5ecd7afb4297755a4f0fc65e5, type: 3}
       propertyPath: m_Name
-      value: Minotaur Variant
+      value: Minotaur
       objectReference: {fileID: 0}
     - target: {fileID: 2668155907638773579, guid: 656751e5ecd7afb4297755a4f0fc65e5, type: 3}
       propertyPath: m_Sprite
@@ -95,5 +95,28 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1450424985702492599, guid: 656751e5ecd7afb4297755a4f0fc65e5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3937579180061930801}
   m_SourcePrefab: {fileID: 100100000, guid: 656751e5ecd7afb4297755a4f0fc65e5, type: 3}
+--- !u!1 &2725059189728034441 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1450424985702492599, guid: 656751e5ecd7afb4297755a4f0fc65e5, type: 3}
+  m_PrefabInstance: {fileID: 3598845816493758270}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3937579180061930801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2725059189728034441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0c2e3ee1d9d11f46898a3820192334c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHitPoints: 0
+  startingHitPoints: 0
+  characterCategory: 1

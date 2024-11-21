@@ -1,7 +1,10 @@
+using System.Collections;
 using UnityEngine;
 
 public class Player : Character
 {
+    public HitPoints hitPoints;
+
     // Used to get a reference to the prefab
     public Inventory inventoryPrefab;
 
@@ -14,12 +17,16 @@ public class Player : Character
     // A copy of the health bar prefab
     HealthBar healthBar;
 
-    public void Start()
+    // Part of MonoBehaviour class; onEnable is called every time an object becomes both enabled and active
+    private void OnEnable()
+    {
+        ResetCharacter();
+    }
+
+    public override void ResetCharacter()
     {
         // Get a copy of the inventory prefab and store a reference to it
         inventory = Instantiate(inventoryPrefab);
-
-        // inventory.character = this;
 
         // Start teh player off with the starting hit point value
         hitPoints.value = startingHitPoints;
@@ -78,12 +85,53 @@ public class Player : Character
 
     public bool AdjustHitPoints(int amount)
     {
+        // don't increase above the max amount
         if (hitPoints.value < maxHitPoints)
         {
             hitPoints.value = hitPoints.value + amount;
             print("Adjusted hitpoints by: " + amount + ". New value: " + hitPoints);
             return true;
         }
+
+        // return false if hit poitns is at max and can't be adjsuted
         return false;
+    }
+
+    public override IEnumerator DamageCharacter(int damage, float interval)
+    {
+        // continuously inflict damage until the loop breaks
+        while (true)
+        {
+            // inflict damage
+            hitPoints.value = hitPoints.value - damage;
+
+            // player is dead; kill off game object and exit loop
+            if (hitPoints.value <= 0)
+            {
+                KillCharacter();
+                break;
+            }
+
+            if (interval > 0)
+            {
+                // wait a specified amount of seconds and inflict more damage
+                yield return new WaitForSeconds (interval);
+            }
+            else
+            {
+                // Intervale = 0; inflict one-time damage and exit loop
+                break;
+            }
+        }
+    }
+
+    public override void KillCharacter()
+    {
+        // Call KillCharacter in parent(Character) class, which will destroy thec player game object
+        base.KillCharacter();
+
+        // Destroy health and inventory bars
+        Destroy(healthBar.gameObject);
+        Destroy(inventory.gameObject);
     }
 }

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8839356145211677529}
   - component: {fileID: 3047719650151266064}
   - component: {fileID: 6123383666704767608}
+  - component: {fileID: 1409816435270293055}
   m_Layer: 8
   m_Name: Boss
   m_TagString: Player
@@ -194,3 +195,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 3
+--- !u!114 &1409816435270293055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078467729470143824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0c2e3ee1d9d11f46898a3820192334c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHitPoints: 0
+  startingHitPoints: 0
+  characterCategory: 1
