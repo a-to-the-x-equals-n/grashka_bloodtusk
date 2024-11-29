@@ -9,18 +9,8 @@ public class MovementController : MonoBehaviour
 
     // holds reference to the animator component in the game object
     Animator animator;
-    readonly string animationState = "AnimationState";
+    
     Rigidbody2D rb2D;
-
-    // enumerated constants to correspond to the values assigned to the animations
-    enum CharStates
-    {
-        walkEast = 1,
-        walkSouth = 2,
-        walkWest = 3,
-        walkNorth = 4,
-        idleSouth = 5
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -39,19 +29,21 @@ public class MovementController : MonoBehaviour
 
     private void UpdateState()
     {
-        // x axis
-        if (movement.x > 0)
-            animator.SetInteger(animationState, (int)CharStates.walkEast);
-        else if (movement.x < 0)
-            animator.SetInteger(animationState, (int)CharStates.walkWest);
-        // y axis
-        else if (movement.y > 0)
-            animator.SetInteger(animationState, (int)CharStates.walkNorth);
-        else if (movement.y < 0)
-            animator.SetInteger(animationState, (int)CharStates.walkSouth);
-        // idle
+        // Check to see if the movement vector is approximately equal to (0, 0) -- i.e. player is still standing still
+        if (Mathf.Approximately(movement.x, 0) && Mathf.Approximately(movement.y, 0))
+        {
+            animator.SetBool("isWalking", false);
+        }
         else
-            animator.SetInteger(animationState, (int)CharStates.idleSouth);
+        {
+            animator.SetBool("isWalking", true);
+        }
+
+        // Update teh animator with the new movement values
+        animator.SetFloat("xDir", movement.x);
+        animator.SetFloat("yDir", movement.y);
+
+
     }
 
     private void FixedUpdate()
