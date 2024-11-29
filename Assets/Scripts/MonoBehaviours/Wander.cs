@@ -151,6 +151,7 @@ public class Wander : MonoBehaviour
                 // Y AXIS
                 else if (direction.y > 0) animator.SetInteger(animationState, (int)CharStates.walkNorth);
                 else if (direction.y < 0) animator.SetInteger(animationState, (int)CharStates.walkSouth);
+                else animator.SetInteger(animationState, (int)CharStates.idleSouth);
                     
                 // Move the RigidBody2D
                 rb2d.MovePosition(newPosition);
