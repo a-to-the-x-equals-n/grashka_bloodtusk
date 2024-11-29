@@ -6,8 +6,11 @@ using UnityEngine;
 // If it doesn't, they will be automatically addded
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(CircleCollider2D))]
 public class Wander : MonoBehaviour
 {
+    CircleCollider2D circleCollider;
+
     // Speed at which the enemy pursues the player
     public float pursuitSpeed;
 
@@ -44,14 +47,23 @@ public class Wander : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
+        circleCollider = GetComponent<CircleCollider2D>();
         currentSpeed = wanderSpeed;
         StartCoroutine(WanderRoutine());
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (circleCollider != null)
+        {
+            Gizmos.DrawWireSphere(transform.position, circleCollider.radius);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.DrawLine(rb2d.position, endPosition, Color.red);
     }
 
     public IEnumerator WanderRoutine()
