@@ -1,8 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-//Ensure that the game object this is attached to has these components
+// Ensure that the game object this is attached to has these components
 // If it doesn't, they will be automatically addded
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
@@ -42,7 +41,7 @@ public class Wander : MonoBehaviour
     // Angle is used to generate a vector which becomes the destination
     float currentAngle = 0;
 
-    string animationState = "AnimationState";
+    readonly string animationState = "AnimationState";
 
     // enumerated constants to correspond to the values assigned to the animations
     enum CharStates
@@ -146,21 +145,16 @@ public class Wander : MonoBehaviour
                 Vector3 newPosition = Vector3.MoveTowards(rigidBodyToMove.position, endPosition, speed * Time.deltaTime);
                 
                 // Determine the direction to adjust the animation state
-                // x axis
-                if (direction.x > 0)
-                    animator.SetInteger(animationState, (int)CharStates.walkEast);
-                else if (direction.x < 0)
-                    animator.SetInteger(animationState, (int)CharStates.walkWest);
+                // X AXIS
+                if (direction.x > 0) animator.SetInteger(animationState, (int)CharStates.walkEast);
+                else if (direction.x < 0) animator.SetInteger(animationState, (int)CharStates.walkWest);
+                // Y AXIS
+                else if (direction.y > 0) animator.SetInteger(animationState, (int)CharStates.walkNorth);
+                else if (direction.y < 0) animator.SetInteger(animationState, (int)CharStates.walkSouth);
                     
-                // y axis
-                else if (direction.y > 0)
-                    animator.SetInteger(animationState, (int)CharStates.walkNorth);
-                else if (direction.y < 0)
-                    animator.SetInteger(animationState, (int)CharStates.walkSouth);
-                    
-
                 // Move the RigidBody2D
                 rb2d.MovePosition(newPosition);
+                
                 // Update the distance remaining
                 remainingDistance = (transform.position - endPosition).sqrMagnitude;
             }

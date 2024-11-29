@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -8666917281800381133}
   - component: {fileID: 2156248240456529356}
   - component: {fileID: 4427185907511118762}
+  - component: {fileID: -2949075940190485868}
   m_Layer: 8
   m_Name: Imp
   m_TagString: Enemy
@@ -250,3 +251,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 3
+--- !u!114 &-2949075940190485868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5285600968275499794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62d6ac5b88fcb08468ed7c89f46cf2c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammoPrefab: {fileID: 0}
+  poolSize: 0
+  weaponVelocity: 2

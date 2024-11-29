@@ -1,15 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
     public float movementSpeed;
+
     // holds 2D points; used to represent a character's location in 2D space, or where it's moving to
-    Vector2 movement = new Vector2();
+    Vector2 movement = new();
+
     // holds reference to the animator component in the game object
     Animator animator;
-    string animationState = "AnimationState";
+    readonly string animationState = "AnimationState";
     Rigidbody2D rb2D;
 
     // enumerated constants to correspond to the values assigned to the animations

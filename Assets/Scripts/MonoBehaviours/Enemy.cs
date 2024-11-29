@@ -27,7 +27,7 @@ public class Enemy : Character
         while (true)
         {
             // inflict damage
-            hitPoints = hitPoints - damage;
+            hitPoints -= damage;
 
             // player is dead; kill off game object and exit loop
             if (hitPoints <= 0)
@@ -59,11 +59,8 @@ public class Enemy : Character
             Player player = collision.gameObject.GetComponent<Player>();
 
             // If coroutine is not currently executing
-            if (damageCoroutine == null)
-            {
-                // start the coroutien to inflict damage to the player every 1 second
-                damageCoroutine = StartCoroutine(player.DamageCharacter(damageStrength, 1.0f));
-            }
+            // start the coroutien to inflict damage to the player every 1 second
+            damageCoroutine ??= StartCoroutine(player.DamageCharacter(damageStrength, 1.0f));
         }
     }
 
