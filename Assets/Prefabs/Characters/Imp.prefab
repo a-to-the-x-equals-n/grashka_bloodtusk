@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -8666917281800381133}
   - component: {fileID: 2156248240456529356}
   - component: {fileID: 4427185907511118762}
-  - component: {fileID: -2949075940190485868}
+  - component: {fileID: 6881814347815544025}
   m_Layer: 8
   m_Name: Imp
   m_TagString: Enemy
@@ -77,8 +77,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1285369215
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 1920155911, guid: f44c8837715cf1043b8672b7047132a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -251,7 +251,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 3
---- !u!114 &-2949075940190485868
+--- !u!114 &6881814347815544025
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -260,9 +260,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5285600968275499794}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62d6ac5b88fcb08468ed7c89f46cf2c6, type: 3}
+  m_Script: {fileID: 11500000, guid: 2446ec1ca0bd93f48b3cb82cffb7b1f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoPrefab: {fileID: 0}
-  poolSize: 0
-  weaponVelocity: 2
+  arrowPrefab: {fileID: 2050583209033892734, guid: 26c281f0bd9d2fa498834c673b3f372f, type: 3}
+  arrowVelocity: 1
+  target: {fileID: 1792349690237931444, guid: 36180c72bc4b4448d8f695e5c5a827be, type: 3}
+  fireInterval: 2
