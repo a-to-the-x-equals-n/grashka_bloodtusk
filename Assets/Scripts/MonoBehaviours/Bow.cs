@@ -23,10 +23,14 @@ public class EnemyWeapon : MonoBehaviour
     private Collider2D enemyCollider; 
     private Collider2D arrowCollider;
 
+    // Animator reference
+    Animator enemyAnimator;
+
     private void Awake()
     {
-        // Cache this enemy's collider
+        // Cache this enemy's collider and animator
         enemyCollider = GetComponent<Collider2D>();
+        enemyAnimator = GetComponent<Animator>();
     }
 
 
@@ -90,6 +94,7 @@ public class EnemyWeapon : MonoBehaviour
             {
                 target = other.transform; // Set the target to the player's transform
                 isFiring = true; // Start firing
+                enemyAnimator.SetBool("isAttacking", true);
                 StartCoroutine(FireArrow());
             }
         }
@@ -101,8 +106,9 @@ public class EnemyWeapon : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isFiring = false; // Stop firing
+            enemyAnimator.SetBool("isAttacking", true);
             StopCoroutine(FireArrow()); // Stop the firing routine
-            new WaitForSeconds(fireInterval);
+            _ = FireWait();
         }
     }
 
