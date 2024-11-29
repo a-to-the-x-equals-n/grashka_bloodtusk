@@ -19,12 +19,16 @@ public class EnemyWeapon : MonoBehaviour
     // Whether the enemy should fire at the player
     private bool isFiring = false;
 
+    // Reference to the enemy's collider
+    private Collider2D enemyCollider; 
+    private Collider2D arrowCollider;
 
-    // Called when the gameobject is destroyed
-    private void OnDestroy()
+    private void Awake()
     {
-        
+        // Cache this enemy's collider
+        enemyCollider = GetComponent<Collider2D>();
     }
+
 
     // Method to trigger the enemy weapon to fire
     public void FireAtTarget()
@@ -38,13 +42,21 @@ public class EnemyWeapon : MonoBehaviour
         Vector3 endPosition = transform.position + direction * 10f; // 10f = distance to travel 'til despawn
 
         // Get a new ammo object located at the weapon's current position
-        GameObject arrrow = Instantiate(arrowPrefab, transform.position, Quaternion.identity);
+        GameObject arrow = Instantiate(arrowPrefab, transform.position, Quaternion.identity);
+
+        // Ignore collision between the arrow and the firing enemy
+        arrowCollider = arrow.GetComponent<Collider2D>();
+
+        if (enemyCollider != null && arrowCollider != null)
+        {
+            Physics2D.IgnoreCollision(enemyCollider, arrowCollider);
+        }
 
         // Rotate the ammo to face the direction
-        arrrow.transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
+        arrow.transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
 
         // Get reference to the Arc or projectile script
-        Arc arcScript = arrrow.GetComponent<Arc>();
+        Arc arcScript = arrow.GetComponent<Arc>();
 
         if (arcScript != null)
         {
@@ -56,7 +68,7 @@ public class EnemyWeapon : MonoBehaviour
         }
 
         // Despawn ammo after 5 seconds
-        Destroy(arrrow, 5f);
+        Destroy(arrow, 5f);
     }
 
     // Coroutine to handle firing intervals
@@ -90,6 +102,12 @@ public class EnemyWeapon : MonoBehaviour
         {
             isFiring = false; // Stop firing
             StopCoroutine(FireArrow()); // Stop the firing routine
+            new WaitForSeconds(fireInterval);
         }
+    }
+
+    private IEnumerator FireWait()
+    {
+        yield return new WaitForSeconds(2f);
     }
 }

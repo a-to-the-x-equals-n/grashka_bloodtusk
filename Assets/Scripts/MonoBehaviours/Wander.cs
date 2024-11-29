@@ -195,7 +195,7 @@ public class Wander : MonoBehaviour
 
     // Called when player exits the circle collider for the enemy
     // Can only happen if player can move faster than the enemy
-    private void OnTriggerExist2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         // See if the object that the enemy is no longer colliding with is the player
         if (collision.gameObject.CompareTag("Player"))

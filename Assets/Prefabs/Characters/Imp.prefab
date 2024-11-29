@@ -203,8 +203,8 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -264,6 +264,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrowPrefab: {fileID: 2050583209033892734, guid: 26c281f0bd9d2fa498834c673b3f372f, type: 3}
-  arrowVelocity: 1
+  arrowVelocity: 0.5
   target: {fileID: 1792349690237931444, guid: 36180c72bc4b4448d8f695e5c5a827be, type: 3}
   fireInterval: 2
