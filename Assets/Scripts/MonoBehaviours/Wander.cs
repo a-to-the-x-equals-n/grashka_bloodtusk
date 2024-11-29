@@ -42,6 +42,18 @@ public class Wander : MonoBehaviour
     // Angle is used to generate a vector which becomes the destination
     float currentAngle = 0;
 
+    string animationState = "AnimationState";
+
+    // enumerated constants to correspond to the values assigned to the animations
+    enum CharStates
+    {
+        walkEast = 1,
+        walkSouth = 2,
+        walkWest = 3,
+        walkNorth = 4,
+        idleSouth = 5
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -117,7 +129,6 @@ public class Wander : MonoBehaviour
 
         while (remainingDistance > float.Epsilon)
         {
-
             if (targetTransform != null)
             {
                 // If targeTransform is set, then it's postion is the player's position
@@ -131,12 +142,25 @@ public class Wander : MonoBehaviour
                 animator.SetBool("isWalking", true);
 
                 // Calculates the movement for a RigidBody2D
-                // To Make sure that object speed is independent of frame rate, multiply the speed by Time.deltaTime
+                Vector3 direction = (endPosition - transform.position).normalized;
                 Vector3 newPosition = Vector3.MoveTowards(rigidBodyToMove.position, endPosition, speed * Time.deltaTime);
+                
+                // Determine the direction to adjust the animation state
+                // x axis
+                if (direction.x > 0)
+                    animator.SetInteger(animationState, (int)CharStates.walkEast);
+                else if (direction.x < 0)
+                    animator.SetInteger(animationState, (int)CharStates.walkWest);
+                    
+                // y axis
+                else if (direction.y > 0)
+                    animator.SetInteger(animationState, (int)CharStates.walkNorth);
+                else if (direction.y < 0)
+                    animator.SetInteger(animationState, (int)CharStates.walkSouth);
+                    
 
                 // Move the RigidBody2D
                 rb2d.MovePosition(newPosition);
-
                 // Update the distance remaining
                 remainingDistance = (transform.position - endPosition).sqrMagnitude;
             }
@@ -144,7 +168,10 @@ public class Wander : MonoBehaviour
             // Pause execution until the next Fixed Frame Update
             yield return new WaitForFixedUpdate();
         }
+
+        // Stop walking / idle
         animator.SetBool("isWalking", false);
+        animator.SetInteger(animationState, (int)CharStates.idleSouth);
     }
 
     // Called when player enters the circle collider for the enemy
