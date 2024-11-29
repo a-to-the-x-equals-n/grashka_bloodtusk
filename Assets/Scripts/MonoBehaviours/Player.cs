@@ -28,7 +28,7 @@ public class Player : Character
         // Get a copy of the inventory prefab and store a reference to it
         inventory = Instantiate(inventoryPrefab);
 
-        // Start teh player off with the starting hit point value
+        // Start the player off with the starting hit point value
         hitPoints.value = startingHitPoints;
 
         // Get a copy of the health bar prfefab and store a reference to it
@@ -115,11 +115,11 @@ public class Player : Character
             if (interval > 0)
             {
                 // wait a specified amount of seconds and inflict more damage
-                yield return new WaitForSeconds (interval);
+                yield return new WaitForSeconds(interval);
             }
             else
             {
-                // Intervale = 0; inflict one-time damage and exit loop
+                // Interval = 0; inflict one-time damage and exit loop
                 break;
             }
         }

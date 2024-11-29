@@ -43,7 +43,7 @@ public class Enemy : Character
             }
             else
             {
-                // Intervale = 0; inflict one-time damage and exit loop
+                // Interval = 0; inflict one-time damage and exit loop
                 break;
             }
         }
@@ -61,7 +61,7 @@ public class Enemy : Character
             // If coroutine is not currently executing
             if (damageCoroutine == null)
             {
-                // start teh coroutien to inflict damage to the player every 1 second
+                // start the coroutien to inflict damage to the player every 1 second
                 damageCoroutine = StartCoroutine(player.DamageCharacter(damageStrength, 1.0f));
             }
         }
@@ -73,7 +73,7 @@ public class Enemy : Character
         // See if the enemy has just stopped colliding with the player
         if (collision.gameObject.CompareTag("Player"))
         {
-            // If coroutien is currrently executing
+            // If coroutine is currrently executing
             if (damageCoroutine != null)
             {
                 StopCoroutine(damageCoroutine);

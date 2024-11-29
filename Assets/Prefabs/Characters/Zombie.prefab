@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie
       objectReference: {fileID: 0}
+    - target: {fileID: 1450424985702492599, guid: 656751e5ecd7afb4297755a4f0fc65e5, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 2668155907638773579, guid: 656751e5ecd7afb4297755a4f0fc65e5, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -65,6 +69,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5911013227102938915, guid: 656751e5ecd7afb4297755a4f0fc65e5, type: 3}
+      propertyPath: m_Size.x
+      value: 0.42664152
+      objectReference: {fileID: 0}
+    - target: {fileID: 5911013227102938915, guid: 656751e5ecd7afb4297755a4f0fc65e5, type: 3}
+      propertyPath: m_Size.y
+      value: 0.9277951
+      objectReference: {fileID: 0}
+    - target: {fileID: 5911013227102938915, guid: 656751e5ecd7afb4297755a4f0fc65e5, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.017221361
+      objectReference: {fileID: 0}
+    - target: {fileID: 5911013227102938915, guid: 656751e5ecd7afb4297755a4f0fc65e5, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.009200305
+      objectReference: {fileID: 0}
+    - target: {fileID: 5911013227102938915, guid: 656751e5ecd7afb4297755a4f0fc65e5, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
       value: 0.5
       objectReference: {fileID: 0}
@@ -99,6 +119,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1450424985702492599, guid: 656751e5ecd7afb4297755a4f0fc65e5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4814871438429926585}
+    - targetCorrespondingSourceObject: {fileID: 1450424985702492599, guid: 656751e5ecd7afb4297755a4f0fc65e5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2237919975642854269}
+    - targetCorrespondingSourceObject: {fileID: 1450424985702492599, guid: 656751e5ecd7afb4297755a4f0fc65e5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -9094590118251206127}
   m_SourcePrefab: {fileID: 100100000, guid: 656751e5ecd7afb4297755a4f0fc65e5, type: 3}
 --- !u!1 &5340284536849249613 stripped
 GameObject:
@@ -121,3 +147,50 @@ MonoBehaviour:
   startingHitPoints: 2
   characterCategory: 1
   damageStrength: 1
+--- !u!114 &2237919975642854269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5340284536849249613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bcaa13bd64891b448bb284f9b84581c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &-9094590118251206127
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5340284536849249613}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 3
