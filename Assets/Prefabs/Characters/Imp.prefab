@@ -139,6 +139,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bcaa13bd64891b448bb284f9b84581c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pursuitSpeed: 2
+  wanderSpeed: 1
+  directionChangeInterval: 3
+  followPlayer: 1
 --- !u!61 &-8666917281800381133
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -210,7 +214,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &4427185907511118762
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -240,7 +244,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

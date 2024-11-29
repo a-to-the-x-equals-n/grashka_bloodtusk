@@ -183,7 +183,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &-3844967290837185993
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -213,7 +213,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -244,10 +244,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c2e3ee1d9d11f46898a3820192334c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitPoints: 2
-  startingHitPoints: 2
+  maxHitPoints: 8
+  startingHitPoints: 8
   characterCategory: 1
-  damageStrength: 1
+  damageStrength: 2
 --- !u!114 &1706571923417186625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,3 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bcaa13bd64891b448bb284f9b84581c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pursuitSpeed: 3
+  wanderSpeed: 2
+  directionChangeInterval: 3
+  followPlayer: 1
