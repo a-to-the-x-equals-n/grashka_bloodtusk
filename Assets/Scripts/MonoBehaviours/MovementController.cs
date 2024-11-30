@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
+    public bool isFrozen = false;
     public float movementSpeed;
 
     // holds 2D points; used to represent a character's location in 2D space, or where it's moving to
@@ -53,17 +54,24 @@ public class MovementController : MonoBehaviour
 
     private void MoveCharacter()
     {
-        // get user input
-        // GetAxisRaw param allows us to specify which axis we're interested in
-        // Returns 1 = right key or "d" (up key or "w")
-        //        -1 = left key or "a" (down key or "s")
-        //         0 = no key pressed
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        if (!isFrozen)
+        {
+            // get user input
+            // GetAxisRaw param allows us to specify which axis we're interested in
+            // Returns 1 = right key or "d" (up key or "w")
+            //        -1 = left key or "a" (down key or "s")
+            //         0 = no key pressed
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
 
-        // keeps player moving at the same rate of speed, no matter which direction they are moving in
-        movement.Normalize();
+            // keeps player moving at the same rate of speed, no matter which direction they are moving in
+            movement.Normalize();
 
-        rb2D.velocity = movement * movementSpeed;
+            rb2D.velocity = movement * movementSpeed;
+        }
+        else
+        {
+            rb2D.velocity = Vector2.zero;
+        }
     }
 }

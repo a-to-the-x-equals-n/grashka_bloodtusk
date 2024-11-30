@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 1409816435270293055}
   - component: {fileID: 1706571923417186625}
   - component: {fileID: -7960591544803433123}
+  - component: {fileID: 4658538402183438079}
   m_Layer: 8
   m_Name: Boss
   m_TagString: Enemy
@@ -232,6 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da0212e57dfe946c288bb340ab1231b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFrozen: 0
   movementSpeed: 3
 --- !u!114 &1409816435270293055
 MonoBehaviour:
@@ -278,3 +280,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+--- !u!114 &4658538402183438079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078467729470143824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2446ec1ca0bd93f48b3cb82cffb7b1f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrowPrefab: {fileID: 1632364341111066663, guid: d41bc02218149a445bb615f44c34d3b8, type: 3}
+  arrowVelocity: 1
+  target: {fileID: 0}
+  fireInterval: 2
