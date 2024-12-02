@@ -1,6 +1,5 @@
-using System.Collections.Generic;
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
 
 public class EnemyWeapon : MonoBehaviour
 {
@@ -20,11 +19,13 @@ public class EnemyWeapon : MonoBehaviour
     private bool isFiring = false;
 
     // Reference to the enemy's collider
-    private Collider2D enemyCollider; 
+    private Collider2D enemyCollider;
     private Collider2D arrowCollider;
 
     // Animator reference
     Animator enemyAnimator;
+
+    private Coroutine firingCoroutine; // Reference to the firing coroutine
 
     private void Awake()
     {
@@ -32,7 +33,6 @@ public class EnemyWeapon : MonoBehaviour
         enemyCollider = GetComponent<Collider2D>();
         enemyAnimator = GetComponent<Animator>();
     }
-
 
     // Method to trigger the enemy weapon to fire
     public void FireAtTarget()
@@ -42,8 +42,8 @@ public class EnemyWeapon : MonoBehaviour
         // Calculate the direction towards the target
         Vector3 direction = (target.position - transform.position).normalized;
 
-        // Calculate the end position based on the direction (optional)
-        Vector3 endPosition = transform.position + direction * 10f; // 10f = distance to travel 'til despawn
+        // Calculate the angle in 2D space (around Z-axis)
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
         // Get a new ammo object located at the weapon's current position
         GameObject arrow = Instantiate(arrowPrefab, transform.position, Quaternion.identity);
@@ -57,7 +57,7 @@ public class EnemyWeapon : MonoBehaviour
         }
 
         // Rotate the ammo to face the direction
-        arrow.transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
+        arrow.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
 
         // Get reference to the Arc or projectile script
         Arc arcScript = arrow.GetComponent<Arc>();
@@ -68,7 +68,7 @@ public class EnemyWeapon : MonoBehaviour
             float travelDuration = 1.0f / arrowVelocity;
 
             // Use the Arc script for the projectile's movement
-            StartCoroutine(arcScript.TravelArc(endPosition, travelDuration));
+            StartCoroutine(arcScript.TravelArc(transform.position + direction * 10f, travelDuration));
         }
 
         // Despawn ammo after 5 seconds
@@ -95,7 +95,9 @@ public class EnemyWeapon : MonoBehaviour
                 target = other.transform; // Set the target to the player's transform
                 isFiring = true; // Start firing
                 enemyAnimator.SetBool("isAttacking", true);
-                StartCoroutine(FireArrow());
+
+                // Start the firing coroutine only once
+                firingCoroutine = StartCoroutine(FireArrow());
             }
         }
     }
@@ -106,14 +108,14 @@ public class EnemyWeapon : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isFiring = false; // Stop firing
-            enemyAnimator.SetBool("isAttacking", true);
-            StopCoroutine(FireArrow()); // Stop the firing routine
-            _ = FireWait();
-        }
-    }
+            enemyAnimator.SetBool("isAttacking", false); // Update animator for no longer attacking
 
-    private IEnumerator FireWait()
-    {
-        yield return new WaitForSeconds(2f);
+            // Stop the firing coroutine when the player exits
+            if (firingCoroutine != null)
+            {
+                StopCoroutine(firingCoroutine);
+                firingCoroutine = null;
+            }
+        }
     }
 }
