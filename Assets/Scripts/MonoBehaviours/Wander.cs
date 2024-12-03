@@ -20,31 +20,31 @@ public class Wander : MonoBehaviour
     public float directionChangeInterval;
 
     // Current speed, which is one of the previous two speeds
-    float currentSpeed;
+    protected float currentSpeed;
 
     // Player chasing behaviour (can turn off if characters other than enemies are created)
     public bool followPlayer;
 
     // Reference to the currently running movement coroutine
-    Coroutine moveCoroutine;
+    protected Coroutine moveCoroutine;
 
     // Components attached to the game object
-    Rigidbody2D rb2d;
-    Animator animator;
+    protected Rigidbody2D rb2d;
+    protected Animator animator;
 
     // The player's transform (position)
-    Transform targetTransform = null;
+    protected Transform targetTransform = null;
 
     // Destination where the enemy is wandering
-    Vector3 endPosition;
+    protected Vector3 endPosition;
 
     // Angle is used to generate a vector which becomes the destination
-    float currentAngle = 0;
+    protected float currentAngle = 0;
 
-    readonly string animationState = "AnimationState";
+    protected readonly string animationState = "AnimationState";
 
     // enumerated constants to correspond to the values assigned to the animations
-    enum CharStates
+    protected enum CharStates
     {
         walkEast = 1,
         walkSouth = 2,
@@ -54,7 +54,7 @@ public class Wander : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
         animator = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
@@ -63,7 +63,7 @@ public class Wander : MonoBehaviour
         StartCoroutine(WanderRoutine());
     }
 
-    private void OnDrawGizmos()
+    protected void OnDrawGizmos()
     {
         if (circleCollider != null)
         {
@@ -72,7 +72,7 @@ public class Wander : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
         Debug.DrawLine(rb2d.position, endPosition, Color.red);
     }
@@ -97,7 +97,7 @@ public class Wander : MonoBehaviour
         }
     }
 
-    private void ChooseNewEndpoint()
+    protected void ChooseNewEndpoint()
     {
         // Choose a random value between 0 and 360 to represent a new direciton to travel toward
         currentAngle += UnityEngine.Random.Range(0, 360);
@@ -110,7 +110,7 @@ public class Wander : MonoBehaviour
     }
 
     // Takes an angle in degrees, converts it to radians, and return a directional vector
-    private Vector3 Vector3FromAngle(float inputAngleDegrees)
+    protected Vector3 Vector3FromAngle(float inputAngleDegrees)
     {
         // Convert angle degrees to radians
         float inputAngleRadians = inputAngleDegrees * Mathf.Deg2Rad;
@@ -120,10 +120,10 @@ public class Wander : MonoBehaviour
     }
 
 
-    private IEnumerator Move(Rigidbody2D rigidBodyToMove, float speed)
+    protected IEnumerator Move(Rigidbody2D rigidBodyToMove, float speed)
     {
         // Retrieve the rough distance remaining between teh current enemy position and the destination
-        // Magnitude is a unity functioni to return the length of the vector
+        // Magnitude is a unity function to return the length of the vector
         float remainingDistance = (transform.position - endPosition).sqrMagnitude;
 
         while (remainingDistance > float.Epsilon)
@@ -137,7 +137,7 @@ public class Wander : MonoBehaviour
             
             if (rigidBodyToMove != null)
             {
-                // Set anumation parameter so anumator will change the anumations that's played
+                // Set animation parameter so animator will change the anumations that's played
                 animator.SetBool("isWalking", true);
 
                 // Calculates the movement for a RigidBody2D
@@ -170,7 +170,7 @@ public class Wander : MonoBehaviour
     }
 
     // Called when player enters the circle collider for the enemy
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         // See if the object that the enemy has collided with is the cplayer and
         // that the enemy is supposed to be following the player
@@ -196,7 +196,7 @@ public class Wander : MonoBehaviour
 
     // Called when player exits the circle collider for the enemy
     // Can only happen if player can move faster than the enemy
-    private void OnTriggerExit2D(Collider2D collision)
+    protected void OnTriggerExit2D(Collider2D collision)
     {
         // See if the object that the enemy is no longer colliding with is the player
         if (collision.gameObject.CompareTag("Player"))
