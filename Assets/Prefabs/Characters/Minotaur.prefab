@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 655028862617912865, guid: 656751e5ecd7afb4297755a4f0fc65e5, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 655028862617912865, guid: 656751e5ecd7afb4297755a4f0fc65e5, type: 3}
       propertyPath: m_AngularDrag
       value: 0
       objectReference: {fileID: 0}
@@ -137,10 +141,10 @@ PrefabInstance:
       addedObject: {fileID: 3937579180061930801}
     - targetCorrespondingSourceObject: {fileID: 1450424985702492599, guid: 656751e5ecd7afb4297755a4f0fc65e5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8551833278298746252}
+      addedObject: {fileID: 5127007563673723248}
     - targetCorrespondingSourceObject: {fileID: 1450424985702492599, guid: 656751e5ecd7afb4297755a4f0fc65e5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5127007563673723248}
+      addedObject: {fileID: 2950447585175570198}
   m_SourcePrefab: {fileID: 100100000, guid: 656751e5ecd7afb4297755a4f0fc65e5, type: 3}
 --- !u!1 &2725059189728034441 stripped
 GameObject:
@@ -159,26 +163,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c2e3ee1d9d11f46898a3820192334c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitPoints: 0
-  startingHitPoints: 0
+  maxHitPoints: 4
+  startingHitPoints: 4
   characterCategory: 1
-  damageStrength: 0
---- !u!114 &8551833278298746252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2725059189728034441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bcaa13bd64891b448bb284f9b84581c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pursuitSpeed: 2
-  wanderSpeed: 1
-  directionChangeInterval: 3
-  followPlayer: 1
+  damageStrength: 2
 --- !u!58 &5127007563673723248
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -214,3 +202,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 3
+--- !u!114 &2950447585175570198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2725059189728034441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4915072bdff2462448b3e2e28e3d82f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pursuitSpeed: 2
+  wanderSpeed: 1
+  directionChangeInterval: 3
+  followPlayer: 1
+  chargeSpeed: 5
+  chargeCooldown: 3
+  stunDuration: 2

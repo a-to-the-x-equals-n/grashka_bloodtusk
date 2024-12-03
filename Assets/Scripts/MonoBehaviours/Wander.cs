@@ -54,7 +54,7 @@ public class Wander : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    protected void Start()
+    protected virtual void Start()
     {
         animator = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
@@ -120,7 +120,7 @@ public class Wander : MonoBehaviour
     }
 
 
-    protected IEnumerator Move(Rigidbody2D rigidBodyToMove, float speed)
+    protected virtual IEnumerator Move(Rigidbody2D rigidBodyToMove, float speed)
     {
         // Retrieve the rough distance remaining between teh current enemy position and the destination
         // Magnitude is a unity function to return the length of the vector
@@ -196,7 +196,7 @@ public class Wander : MonoBehaviour
 
     // Called when player exits the circle collider for the enemy
     // Can only happen if player can move faster than the enemy
-    protected void OnTriggerExit2D(Collider2D collision)
+    protected virtual void OnTriggerExit2D(Collider2D collision)
     {
         // See if the object that the enemy is no longer colliding with is the player
         if (collision.gameObject.CompareTag("Player"))
