@@ -5,7 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Testing.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Map.unity
+    guid: 06e19f4241119ab4c81df9ad796b187c
+  - enabled: 1
+    path: Assets/Scenes/Labyrinth.unity
+    guid: 9861131aef0c44d8b908e2e308dd1a05
+  - enabled: 1
+    path: Assets/Scenes/BossLevel.unity
+    guid: 58220949e9ddf1d41948ba01148bcd41
   m_configObjects: {}
