@@ -36,6 +36,12 @@ public class RPGGameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // to leave game outisde unity
+        if (Input.GetKey("Escape"))
+        {
+            Application.Quit();
+        }
+
         
     }
 
