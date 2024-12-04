@@ -20,7 +20,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_ExitTime: 1
-  m_HasExitTime: 1
+  m_HasExitTime: 0
   m_HasFixedDuration: 0
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -122,8 +122,8 @@ AnimatorStateTransition:
   serializedVersion: 3
   m_TransitionDuration: 0
   m_TransitionOffset: 0
-  m_ExitTime: 0
-  m_HasExitTime: 0
+  m_ExitTime: 1
+  m_HasExitTime: 1
   m_HasFixedDuration: 0
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -273,7 +273,7 @@ BlendTree:
     m_Motion: {fileID: 7400000, guid: 5318223cfc3f9344d83a261ea3c19c1f, type: 2}
     m_Threshold: 0
     m_Position: {x: 1, y: 0}
-    m_TimeScale: 1
+    m_TimeScale: 0.6
     m_CycleOffset: 0
     m_DirectBlendParameter: xDir
     m_Mirror: 0
@@ -281,7 +281,7 @@ BlendTree:
     m_Motion: {fileID: 7400000, guid: 91753d8d72d14c7408386f04f5652387, type: 2}
     m_Threshold: 0.33333334
     m_Position: {x: 0, y: -1}
-    m_TimeScale: 1
+    m_TimeScale: 0.6
     m_CycleOffset: 0
     m_DirectBlendParameter: xDir
     m_Mirror: 0
@@ -289,7 +289,7 @@ BlendTree:
     m_Motion: {fileID: 7400000, guid: be1c733a3fcc441448bee958a13cec65, type: 2}
     m_Threshold: 0.6666667
     m_Position: {x: -1, y: 0}
-    m_TimeScale: 1
+    m_TimeScale: 0.6
     m_CycleOffset: 0
     m_DirectBlendParameter: xDir
     m_Mirror: 0
@@ -297,7 +297,7 @@ BlendTree:
     m_Motion: {fileID: 7400000, guid: 6b3054813d097d649b08a2c93661f4fa, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: 1}
-    m_TimeScale: 1
+    m_TimeScale: 0.6
     m_CycleOffset: 0
     m_DirectBlendParameter: xDir
     m_Mirror: 0
@@ -316,7 +316,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Attack Tree
-  m_Speed: 0.6
+  m_Speed: 0.8
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -8872225766489703238}

@@ -8,18 +8,13 @@ public class Axe : MonoBehaviour
     bool isAttacking;
 
     // Animator reference
-    [HideInInspector]
-    public Animator animator;
-
+    [HideInInspector] public Animator animator;
     // reference to the camera
     Camera localCamera;
-    float positiveSlope;
-    float negativeSlope;
+    float positiveSlope, negativeSlope;
 
     // Enum to describe the direction the player is firing in
     enum Quadrant { East, South, West, North }
-
-    // Enum to describe which slope line to compare against
     enum SlopeLine { Positive, Negative }
 
     private void Start()
@@ -58,8 +53,10 @@ public class Axe : MonoBehaviour
 
     private void TriggerAttack()
     {
-        if (isAttacking)
+        if (!isAttacking)
         {
+            isAttacking = true;
+
             Quadrant attackDirection  = GetQuadrant();
             var quadrantVector = attackDirection  switch
             {
@@ -70,17 +67,20 @@ public class Axe : MonoBehaviour
                 _ => new Vector2(0.0f, 0.0f),
             };
 
+            Debug.Log($"Attacking in direction: {attackDirection} ({quadrantVector.x}, {quadrantVector.y})");
+
             // Pass the attack state and direction to the animator
             animator.SetBool("isAttacking", true);
             animator.SetFloat("AttackXDir", quadrantVector.x);
             animator.SetFloat("AttackYDir", quadrantVector.y);
 
-            // Invoke(nameof(ResetAttack), 0.5f); // Adjust delay as needed
+            Invoke(nameof(ResetAttack), 0.4f); // Adjust delay as needed
         }
     }
 
     private void ResetAttack()
     {
+        Debug.Log("Resetting attack");
         isAttacking = false;
         animator.SetBool("isAttacking", false);
     }
