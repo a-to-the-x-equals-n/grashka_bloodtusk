@@ -17,6 +17,9 @@ public class Axe : MonoBehaviour
     enum Quadrant { East, South, West, North }
     enum SlopeLine { Positive, Negative }
 
+    // Amount of damage the axe will inflict on an enemy
+    public int damageInflicted;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -106,5 +109,21 @@ public class Axe : MonoBehaviour
 
         if (abovePositiveSlope) return aboveNegativeSlope ? Quadrant.North : Quadrant.West;
         else return aboveNegativeSlope ? Quadrant.East : Quadrant.South;
+    }
+
+
+
+    // Called when another object enters the trigger collider attached to the ammo gameobject
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Check that we have hit the box collider inside the enemy, and not it's circle collider
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            // Retrieve the player script from the enemy object
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+
+            // Start the damage coroutine; 0.0f will inflict a one-time damage
+            StartCoroutine(enemy.DamageSelf(damageInflicted, 0.0f));
+        }
     }
 }
