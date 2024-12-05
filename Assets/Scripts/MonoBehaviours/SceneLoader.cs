@@ -19,9 +19,9 @@ public class SceneLoader : MonoBehaviour
 
     }
 
-    public void LoadScenebyName(string Labyrinth)
+    public void LoadScenebyName(string Labyrinth_2)
     {
-        SceneManager.LoadScene(Labyrinth);
+        SceneManager.LoadScene(Labyrinth_2);
     }
         
 }
