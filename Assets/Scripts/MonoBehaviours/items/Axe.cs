@@ -4,14 +4,20 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class Axe : MonoBehaviour
 {
+    // Axe prefab assigned in inspector
+    public GameObject axePrefab;
     // Is the player currently attacking
     bool isAttacking;
+    // Checks to see if axe is already thrown
+    bool unarmed = false;
 
     // Animator reference
     [HideInInspector] public Animator animator;
     // reference to the camera
     Camera localCamera;
     float positiveSlope, negativeSlope;
+
+    public float velocity;
 
     // Enum to describe the direction the player is firing in
     enum Quadrant { East, South, West, North }
@@ -48,10 +54,31 @@ public class Axe : MonoBehaviour
     private void Update()
     {
         // Check to see if user has clicked the mouse to fire the slingshot
-        if (Input.GetMouseButtonDown(0)) // Parameter 0 checks for left mouse button; 1 checks for right
+        if (!unarmed && Input.GetMouseButtonDown(0)) // Parameter 0 checks for left mouse button; 1 checks for right
         {
-            TriggerAttack();
+            ThrowAxe();
         }
+    }
+
+    private void ThrowAxe()
+    {
+        // Convert the mouse position from screen space to world space
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        // Get a new ammo object located at the weapon's current position
+        Vector3 spawnPosition = transform.position;
+        Quaternion spawnRotation = Quaternion.identity; // No rotation
+        Instantiate(axePrefab, spawnPosition, spawnRotation);
+        axePrefab.SetActive(true);
+
+        // Get reference to the arc script
+        Arc arcScript = axePrefab.GetComponent<Arc>();
+
+        // Calculate the amount of time for ammo travel
+            // Example: if velocity is 2, then 1/2 = 0.5 or a half second to travel across the screen
+        float travelDuration = 1.0f / velocity;
+
+        StartCoroutine(arcScript.TravelArc(mousePosition, travelDuration));
     }
 
     private void TriggerAttack()
@@ -59,6 +86,7 @@ public class Axe : MonoBehaviour
         if (!isAttacking)
         {
             isAttacking = true;
+            unarmed = true;
 
             Quadrant attackDirection  = GetQuadrant();
             var quadrantVector = attackDirection  switch
@@ -86,6 +114,7 @@ public class Axe : MonoBehaviour
         Debug.Log("Resetting attack");
         isAttacking = false;
         animator.SetBool("isAttacking", false);
+        unarmed = false;
     }
 
     // Determines whether the input position is above a given sloped line
@@ -111,8 +140,6 @@ public class Axe : MonoBehaviour
         else return aboveNegativeSlope ? Quadrant.East : Quadrant.South;
     }
 
-
-
     // Called when another object enters the trigger collider attached to the ammo gameobject
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -128,6 +155,5 @@ public class Axe : MonoBehaviour
                 StartCoroutine(enemy.DamageCharacter(damageInflicted, 0.0f));
             }
         }
-        
     }
 }
