@@ -79,33 +79,33 @@ public class Enemy : Character
         }
     }
 
-    public IEnumerator DamageSelf(int damage, float interval)
-    {
-        // continuously inflict damage until the loop breaks
-        while (true)
-        {
-            // inflict damage
-            hitPoints -= damage;
+    // public IEnumerator DamageSelf(int damage, float interval)
+    // {
+    //     // continuously inflict damage until the loop breaks
+    //     while (true)
+    //     {
+    //         // inflict damage
+    //         hitPoints -= damage;
 
-            // enemy is dead; kill off game object and exit loop
-            if (hitPoints <= 0)
-            {
-                KillCharacter();
-                break;
-            }
+    //         // enemy is dead; kill off game object and exit loop
+    //         if (hitPoints <= 0)
+    //         {
+    //             KillCharacter();
+    //             break;
+    //         }
 
-            if (interval > 0)
-            {
-                // wait a specified amount of seconds and inflict more damage
-                yield return new WaitForSeconds(interval);
-            }
-            else
-            {
-                // Interval = 0; inflict one-time damage and exit loop
-                break;
-            }
-        }
-    }
+    //         if (interval > 0)
+    //         {
+    //             // wait a specified amount of seconds and inflict more damage
+    //             yield return new WaitForSeconds(interval);
+    //         }
+    //         else
+    //         {
+    //             // Interval = 0; inflict one-time damage and exit loop
+    //             break;
+    //         }
+    //     }
+    // }
 
     public override void KillCharacter()
     {
