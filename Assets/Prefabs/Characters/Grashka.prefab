@@ -210,7 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHitPoints: 10
-  startingHitPoints: 6
+  startingHitPoints: 10
   characterCategory: 0
   hitPoints: {fileID: 11400000, guid: 360ba24bc5bdc3d47af0c86dab733561, type: 2}
   inventoryPrefab: {fileID: 2581338992195673786, guid: 6aba98553bb17bc4ead159c0997ac745, type: 3}
