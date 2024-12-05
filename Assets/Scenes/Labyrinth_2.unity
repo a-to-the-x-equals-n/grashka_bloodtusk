@@ -8904,7 +8904,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2725059189728034441, guid: afe29f50ea6449746be1cf0a107fd184, type: 3}
       propertyPath: m_Name
-      value: Minotaur (2)
+      value: Minotaur_SE
       objectReference: {fileID: 0}
     - target: {fileID: 9088804452310713928, guid: afe29f50ea6449746be1cf0a107fd184, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8961,7 +8961,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2725059189728034441, guid: afe29f50ea6449746be1cf0a107fd184, type: 3}
       propertyPath: m_Name
-      value: Minotaur (3)
+      value: Minotaur_NE
       objectReference: {fileID: 0}
     - target: {fileID: 9088804452310713928, guid: afe29f50ea6449746be1cf0a107fd184, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23630,7 +23630,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2725059189728034441, guid: afe29f50ea6449746be1cf0a107fd184, type: 3}
       propertyPath: m_Name
-      value: Minotaur
+      value: Minotaur_SW
       objectReference: {fileID: 0}
     - target: {fileID: 9088804452310713928, guid: afe29f50ea6449746be1cf0a107fd184, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23687,7 +23687,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2725059189728034441, guid: afe29f50ea6449746be1cf0a107fd184, type: 3}
       propertyPath: m_Name
-      value: Minotaur (1)
+      value: Minotaur_NW
       objectReference: {fileID: 0}
     - target: {fileID: 9088804452310713928, guid: afe29f50ea6449746be1cf0a107fd184, type: 3}
       propertyPath: m_LocalPosition.x

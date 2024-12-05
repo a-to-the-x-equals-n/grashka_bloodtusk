@@ -228,3 +228,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  damageInflicted: 1
