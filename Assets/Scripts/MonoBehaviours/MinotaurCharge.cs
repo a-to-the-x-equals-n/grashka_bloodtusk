@@ -107,10 +107,10 @@ public class MinotaurCharge : Wander
                 // Pause execution until the next Fixed Frame Update
                 yield return new WaitForFixedUpdate();
             }
-            // Stop walking / idle
-            animator.SetBool("isWalking", false);
-            animator.SetInteger(animationState, (int)CharStates.idleSouth);
         }
+        // Stop walking / idle
+        animator.SetBool("isWalking", false);
+        animator.SetInteger(animationState, (int)CharStates.idleSouth);
     }
 
     protected override void OnTriggerEnter2D(Collider2D collision)
