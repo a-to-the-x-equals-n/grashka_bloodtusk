@@ -72,7 +72,7 @@ public class EnemyWeapon : MonoBehaviour
         }
 
         // Despawn ammo after 5 seconds
-        Destroy(arrow, 5f);
+        Destroy(arrow, 3.0f);
     }
 
     // Coroutine to handle firing intervals
