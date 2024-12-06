@@ -46,11 +46,11 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 3dbeb555b4311134db8b14ef6756e96a, type: 2}
     - target: {fileID: 5751167425512657270, guid: 656751e5ecd7afb4297755a4f0fc65e5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.82179815
+      value: -9.85521
       objectReference: {fileID: 0}
     - target: {fileID: 5751167425512657270, guid: 656751e5ecd7afb4297755a4f0fc65e5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.0353708
+      value: 0.034932017
       objectReference: {fileID: 0}
     - target: {fileID: 5751167425512657270, guid: 656751e5ecd7afb4297755a4f0fc65e5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -159,10 +159,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c2e3ee1d9d11f46898a3820192334c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitPoints: 2
-  startingHitPoints: 2
+  maxHitPoints: 4
+  startingHitPoints: 4
   characterCategory: 1
-  hitPoints: {fileID: 11400000, guid: 360ba24bc5bdc3d47af0c86dab733561, type: 2}
   damageStrength: 1
 --- !u!114 &2237919975642854269
 MonoBehaviour:
@@ -176,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bcaa13bd64891b448bb284f9b84581c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pursuitSpeed: 2
+  pursuitSpeed: 1.5
   wanderSpeed: 1
   directionChangeInterval: 3
   followPlayer: 1

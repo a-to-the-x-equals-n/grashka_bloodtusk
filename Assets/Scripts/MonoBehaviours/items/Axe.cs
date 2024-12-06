@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 [RequireComponent(typeof(Animator))]
 public class Axe : MonoBehaviour
@@ -21,7 +20,6 @@ public class Axe : MonoBehaviour
     private enum SlopeLine { Positive, Negative }
 
     public float velocity;
-    public int damageInflicted;
     private bool isAttacking;
     private bool armed = true; // Ensures only one axe can be thrown
 
@@ -96,6 +94,7 @@ public class Axe : MonoBehaviour
         axeObject.SetActive(true);
         axeObject.transform.position = transform.position;
 
+        // Start the travel arc
         if(axeObject != null)
         {
             // Calculate the amount of time for ammo travel
@@ -205,23 +204,22 @@ public class Axe : MonoBehaviour
     }
 
     // Called when another object enters the trigger collider attached to the ammo gameobject
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision is BoxCollider2D)
-        {
-            // Check that we have hit the box collider inside the enemy, and not it's circle collider
-            if (collision.gameObject.CompareTag("Enemy"))
-            {
-                Debug.Log("Enemy hit!");
+    // private void OnTriggerEnter2D(Collider2D collision)
+    // {
+    //     if (collision is BoxCollider2D)
+    //     {
+    //         // Check that we have hit the box collider inside the enemy, and not it's circle collider
+    //         if (collision.gameObject.CompareTag("Enemy"))
+    //         {
+    //             Debug.Log("Enemy hit!");
 
-                // Retrieve the player script from the enemy object
-                Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+    //             // Retrieve the player script from the enemy object
+    //             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
 
-                Debug.Log("Enemy script found, starting damage coroutine.");
-                StartCoroutine(enemy.DamageCharacter(damageInflicted, 0.0f));
-                    // damageCoroutine ??= StartCoroutine(enemy.DamageCharacter(damageInflicted, 0.0f));
-            }
-        }
-        
-    }
+    //             Debug.Log("Enemy script found, starting damage coroutine.");
+    //             StartCoroutine(enemy.DamageCharacter(damageInflicted, 0.0f));
+    //                 // damageCoroutine ??= StartCoroutine(enemy.DamageCharacter(damageInflicted, 0.0f));
+    //         }
+    //     }
+    // }
 }
