@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Enemy : Character
 {
-    float hitPoints;
+    public HitPoints hitPoints;
 
     // Amount of damage the enemy will inflict when it runs into the player
     public int damageStrength;
@@ -18,35 +18,33 @@ public class Enemy : Character
 
     public override void ResetCharacter()
     {
-        hitPoints = startingHitPoints;
+        hitPoints.value = startingHitPoints;
     }
 
     public override IEnumerator DamageCharacter(int damage, float interval)
     {
-        // continuously inflict damage until the loop breaks
-        while (true)
+        // inflict damage
+        hitPoints.value -= damage;
+
+        // player is dead; kill off game object and exit loop
+        if (hitPoints.value <= 0)
         {
-            // inflict damage
-            hitPoints -= damage;
-
-            // player is dead; kill off game object and exit loop
-            if (hitPoints <= 0)
-            {
-                KillCharacter();
-                break;
-            }
-
-            if (interval > 0)
-            {
-                // wait a specified amount of seconds and inflict more damage
-                yield return new WaitForSeconds (interval);
-            }
-            else
-            {
-                // Interval = 0; inflict one-time damage and exit loop
-                break;
-            }
+            KillCharacter();
         }
+
+        yield return null;
+
+        // if (interval > 0)
+        // {
+        //     // wait a specified amount of seconds and inflict more damage
+        //     yield return new WaitForSeconds (interval);
+        // }
+        // else
+        // {
+        //     // Interval = 0; inflict one-time damage and exit loop
+        //     break;
+        // }
+        
     }
 
     // Called by the Unity engine whenever the current enemy object's Collider2D makes contact with another object's Collider2D
@@ -78,34 +76,6 @@ public class Enemy : Character
             }
         }
     }
-
-    // public IEnumerator DamageSelf(int damage, float interval)
-    // {
-    //     // continuously inflict damage until the loop breaks
-    //     while (true)
-    //     {
-    //         // inflict damage
-    //         hitPoints -= damage;
-
-    //         // enemy is dead; kill off game object and exit loop
-    //         if (hitPoints <= 0)
-    //         {
-    //             KillCharacter();
-    //             break;
-    //         }
-
-    //         if (interval > 0)
-    //         {
-    //             // wait a specified amount of seconds and inflict more damage
-    //             yield return new WaitForSeconds(interval);
-    //         }
-    //         else
-    //         {
-    //             // Interval = 0; inflict one-time damage and exit loop
-    //             break;
-    //         }
-    //     }
-    // }
 
     public override void KillCharacter()
     {
