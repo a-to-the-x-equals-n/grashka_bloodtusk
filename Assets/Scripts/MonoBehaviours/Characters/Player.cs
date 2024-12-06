@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : Character
 {
@@ -133,5 +134,8 @@ public class Player : Character
         // Destroy health and inventory bars
         Destroy(healthBar.gameObject);
         Destroy(inventory.gameObject);
+
+        // Load the Game Over scene
+        SceneManager.LoadScene("GameOver");
     }
 }
