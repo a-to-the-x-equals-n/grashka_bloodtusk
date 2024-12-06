@@ -97,7 +97,7 @@ public class Player : Character
         return false;
     }
 
-    public IEnumerator DamageCharacter(int damage, float interval)
+    public override IEnumerator DamageCharacter(int damage, float interval)
     {
         // continuously inflict damage until the loop breaks
         while (true)

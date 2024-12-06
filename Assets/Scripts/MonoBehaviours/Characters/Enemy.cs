@@ -21,7 +21,7 @@ public class Enemy : Character
         hitPoints.value = startingHitPoints;
     }
 
-    public void DamageCharacter(int damage, float interval)
+    public override IEnumerator DamageCharacter(int damage, float interval)
     {
         // inflict damage
         hitPoints.value -= damage;
@@ -32,7 +32,7 @@ public class Enemy : Character
             KillCharacter();
         }
 
-        // yield return null;
+        yield return null;
 
         // if (interval > 0)
         // {
