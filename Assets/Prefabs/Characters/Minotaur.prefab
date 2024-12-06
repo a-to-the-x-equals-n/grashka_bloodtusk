@@ -50,11 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 52631f55de735174e81e50b509e71060, type: 2}
     - target: {fileID: 5751167425512657270, guid: 656751e5ecd7afb4297755a4f0fc65e5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.82179815
+      value: -11.205737
       objectReference: {fileID: 0}
     - target: {fileID: 5751167425512657270, guid: 656751e5ecd7afb4297755a4f0fc65e5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.0353708
+      value: -7.343587
       objectReference: {fileID: 0}
     - target: {fileID: 5751167425512657270, guid: 656751e5ecd7afb4297755a4f0fc65e5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -163,8 +163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c2e3ee1d9d11f46898a3820192334c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitPoints: 4
-  startingHitPoints: 4
+  maxHitPoints: 6
+  startingHitPoints: 6
   characterCategory: 1
   damageStrength: 2
 --- !u!58 &5127007563673723248
