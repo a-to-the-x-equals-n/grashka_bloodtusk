@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5919672347461214856}
   - component: {fileID: 268181990182550084}
   - component: {fileID: 7609907176642451112}
-  m_Layer: 10
+  m_Layer: 6
   m_Name: Grashka
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -229,5 +229,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   axePrefab: {fileID: 4264124922876330139, guid: b6a42d7ade388f94783ac8a45ef8243b, type: 3}
-  velocity: 1
+  velocity: 2
   damageInflicted: 1

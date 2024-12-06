@@ -3,11 +3,6 @@ using UnityEngine;
 
 public class AxeArc : Arc
 {
-    // Coroutine to move the gameobject; it will execute over several frames
-    // Destination: the end position of the item
-    // Duration: amount of time to move the gameobject from starting postion to destination
-    public float speed;
-
     public override IEnumerator TravelArc(Vector3 destination, float duration)
     {
         // Grab the current gameobject's position

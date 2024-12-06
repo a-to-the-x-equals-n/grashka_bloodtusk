@@ -23,7 +23,6 @@ public class MinotaurCharge : Wander
     {
         float distance = (transform.position - endPosition).sqrMagnitude; // Get distance between enemy position and destination
 
-        Debug.Log("Move coroutine started"); // Debug log
         // Check if targetTransform is null and exit if there's no valid target
         if (targetTransform != null && !coolingDown)
         {
@@ -34,12 +33,9 @@ public class MinotaurCharge : Wander
             {
                 if (rigidBodyToMove != null)
                 {
-                    Debug.Log("Moving towards target"); // Debug log
-
                     // Check if stunned
                     if (stunned)
                     {
-                        Debug.LogWarning("Minotaur stunned. Exiting Move."); // Debug warning
                         yield break; // Exit
                     }
 
@@ -118,8 +114,6 @@ public class MinotaurCharge : Wander
         Debug.Log("OnTriggerEnter2D called"); // Debug log
         if (collision.gameObject.CompareTag("Player") && followPlayer)
         {
-            Debug.Log("Player detected in collider"); // Debug log
-
             // If on cooldown, do nothing
             if (stunned) return;
 

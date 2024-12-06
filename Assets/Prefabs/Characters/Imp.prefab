@@ -127,6 +127,7 @@ MonoBehaviour:
   maxHitPoints: 2
   startingHitPoints: 2
   characterCategory: 1
+  hitPoints: {fileID: 11400000, guid: 360ba24bc5bdc3d47af0c86dab733561, type: 2}
   damageStrength: 1
 --- !u!114 &-8979273025157300648
 MonoBehaviour:

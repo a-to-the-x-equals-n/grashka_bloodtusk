@@ -13,6 +13,7 @@ public class Axe : MonoBehaviour
     private Rigidbody2D rb2d;
     private float positiveSlope, negativeSlope;
     private Camera localCamera;
+    Coroutine damageCoroutine; // Reference to a running coroutine
 
     // Enums for directions
     private enum Quadrant { East, South, West, North }
@@ -205,16 +206,22 @@ public class Axe : MonoBehaviour
     // Called when another object enters the trigger collider attached to the ammo gameobject
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision is BoxCollider2D)
+        // Check that we have hit the box collider inside the enemy, and not it's circle collider
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            // Check that we have hit the box collider inside the enemy, and not it's circle collider
-            if (collision.gameObject.CompareTag("Enemy"))
-            {
-                // Retrieve the player script from the enemy object
-                Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            Debug.Log("Enemy hit!");
 
-                // Start the damage coroutine; 0.0f will inflict a one-time damage
-                StartCoroutine(enemy.DamageCharacter(damageInflicted, 0.0f));
+            // Retrieve the player script from the enemy object
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+
+            if (enemy != null)
+            {
+                Debug.Log("Enemy script found, starting damage coroutine.");
+                damageCoroutine ??= StartCoroutine(enemy.DamageCharacter(damageInflicted, 0.0f));
+            }
+            else
+            {
+                Debug.LogError("Enemy script not found on collided object!");
             }
         }
     }

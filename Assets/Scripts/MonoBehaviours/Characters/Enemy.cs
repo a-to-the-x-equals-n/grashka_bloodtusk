@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Enemy : Character
 {
-    float hitPoints;
+    public HitPoints hitPoints;
 
     // Amount of damage the enemy will inflict when it runs into the player
     public int damageStrength;
@@ -18,7 +18,7 @@ public class Enemy : Character
 
     public override void ResetCharacter()
     {
-        hitPoints = startingHitPoints;
+        hitPoints.value = startingHitPoints;
     }
 
     public override IEnumerator DamageCharacter(int damage, float interval)
@@ -27,10 +27,10 @@ public class Enemy : Character
         while (true)
         {
             // inflict damage
-            hitPoints -= damage;
+            hitPoints.value -= damage;
 
             // player is dead; kill off game object and exit loop
-            if (hitPoints <= 0)
+            if (hitPoints.value <= 0)
             {
                 KillCharacter();
                 break;
