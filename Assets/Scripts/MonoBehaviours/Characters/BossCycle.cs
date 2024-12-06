@@ -6,6 +6,7 @@ public class BossCycle : MonoBehaviour
 {
     // Time between attacks
     int attackTime = 0;
+    bool spawn = true;
     CircleCollider2D circleCollider;
 
     // Speed at which the enemy pursues the player
@@ -29,6 +30,7 @@ public class BossCycle : MonoBehaviour
     // Components attached to the game object
     protected Rigidbody2D rb2d;
     protected Animator animator;
+    private SpawnPoint spawnZombie;
 
     // The player's transform (position)
     protected Transform targetTransform = null;
@@ -58,6 +60,7 @@ public class BossCycle : MonoBehaviour
         animator = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
         circleCollider = GetComponent<CircleCollider2D>();
+        spawnZombie = GetComponent<SpawnPoint>();
         currentSpeed = wanderSpeed;
         StartCoroutine(WanderRoutine());
     }
@@ -85,6 +88,7 @@ public class BossCycle : MonoBehaviour
         else
         {
             attackTime = 0;
+            spawn = true;
         }
     }
 
@@ -170,10 +174,13 @@ public class BossCycle : MonoBehaviour
                 // Update the distance remaining
                 remainingDistance = (transform.position - endPosition).sqrMagnitude;
             }
-            else if (attackTime > 200)
+            else if (attackTime > 200 && spawn)
             {
                 //Attack on time interval
                 animator.SetInteger(animationState, (int)CharStates.attack);
+                spawnZombie.SpawnObject();
+                spawnZombie.SpawnObject();
+                spawn = false;
             }
 
             // Pause execution until the next Fixed Frame Update

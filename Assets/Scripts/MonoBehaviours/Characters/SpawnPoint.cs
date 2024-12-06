@@ -19,6 +19,10 @@ public class SpawnPoint : MonoBehaviour
             // repeatInterval is how often to call the method
             InvokeRepeating("SpawnObject", 0.0f, repeatInterval);
         }
+        else
+        {
+            SpawnObject();
+        }
     }
 
     public GameObject SpawnObject()
