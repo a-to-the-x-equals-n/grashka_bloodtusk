@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 5919672347461214856}
   - component: {fileID: 268181990182550084}
   - component: {fileID: 7609907176642451112}
+  - component: {fileID: 6312580317182832991}
+  - component: {fileID: 3125960944792352291}
   m_Layer: 6
   m_Name: Grashka
   m_TagString: Player
@@ -37,7 +39,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!212 &7417223579200880565
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -227,5 +229,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f13e998beac5834eac5ac102b0b63fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  axePrefab: {fileID: 0}
   animator: {fileID: 0}
+  velocity: 0
   damageInflicted: 1
+--- !u!114 &6312580317182832991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445282919976160673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec856ee35d50ab46b990e48b6fa91a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3125960944792352291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445282919976160673}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec856ee35d50ab46b990e48b6fa91a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
