@@ -231,12 +231,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   axePrefab: {fileID: 0}
   animator: {fileID: 0}
-<<<<<<< HEAD
-  velocity: 0
-=======
   axePrefab: {fileID: 4264124922876330139, guid: b6a42d7ade388f94783ac8a45ef8243b, type: 3}
   velocity: 2
->>>>>>> cfbf6f5d723a14fadcf732b02eb1eebcf09345d4
   damageInflicted: 1
 --- !u!114 &6312580317182832991
 MonoBehaviour:
