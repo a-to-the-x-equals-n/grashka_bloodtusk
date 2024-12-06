@@ -42,7 +42,7 @@ public class Enemy : Character
         // }
         // else
         // {
-        //     // Interval = 0; inflict one-time damage and exit loop
+        //     interval = 0; // inflict one-time damage and exit loop
         //     break;
         // }
         
