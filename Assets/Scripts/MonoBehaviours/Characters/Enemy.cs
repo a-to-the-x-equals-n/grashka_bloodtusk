@@ -1,9 +1,10 @@
 using UnityEngine;
 using System.Collections;
 
+
 public class Enemy : Character
 {
-    public HitPoints hitPoints;
+    private float hitPoints;
 
     // Amount of damage the enemy will inflict when it runs into the player
     public int damageStrength;
@@ -18,16 +19,16 @@ public class Enemy : Character
 
     public override void ResetCharacter()
     {
-        hitPoints.value = startingHitPoints;
+        hitPoints = startingHitPoints;
     }
 
     public override IEnumerator DamageCharacter(int damage, float interval)
     {
         // inflict damage
-        hitPoints.value -= damage;
+        hitPoints -= damage;
 
         // player is dead; kill off game object and exit loop
-        if (hitPoints.value <= 0)
+        if (hitPoints <= 0)
         {
             KillCharacter();
         }
@@ -41,7 +42,7 @@ public class Enemy : Character
         // }
         // else
         // {
-        //     // Interval = 0; inflict one-time damage and exit loop
+        //     interval = 0; // inflict one-time damage and exit loop
         //     break;
         // }
         

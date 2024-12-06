@@ -213,7 +213,7 @@ MonoBehaviour:
   startingHitPoints: 10
   characterCategory: 0
   hitPoints: {fileID: 11400000, guid: 360ba24bc5bdc3d47af0c86dab733561, type: 2}
-  inventoryPrefab: {fileID: 2581338992195673786, guid: 6aba98553bb17bc4ead159c0997ac745, type: 3}
+  inventoryPrefab: {fileID: 2581338992195673786, guid: d453dcca2aa0a4a2481bd686a9ecc5df, type: 3}
   healthBarPrefab: {fileID: 3620692400302748260, guid: 6550a987f4bc0ba4d97b6571221f06a5, type: 3}
 --- !u!114 &7609907176642451112
 MonoBehaviour:
@@ -230,4 +230,3 @@ MonoBehaviour:
   animator: {fileID: 0}
   axePrefab: {fileID: 4264124922876330139, guid: b6a42d7ade388f94783ac8a45ef8243b, type: 3}
   velocity: 2
-  damageInflicted: 1
