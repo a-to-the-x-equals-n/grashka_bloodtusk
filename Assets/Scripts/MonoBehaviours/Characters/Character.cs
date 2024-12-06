@@ -29,5 +29,5 @@ public abstract class Character : MonoBehaviour
     // Coroutine to inflict an amount of damage to the character over a period of time
     // interval = 0 to inflict a one-time damage hit
     // interval > 0 to continuously inclict damage at teh set interval of time
-    public abstract IEnumerator DamageCharacter(int damage, float interval);
+    // public abstract IEnumerator DamageCharacter(int damage, float interval);
 }

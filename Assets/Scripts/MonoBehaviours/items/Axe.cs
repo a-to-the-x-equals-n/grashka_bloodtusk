@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 [RequireComponent(typeof(Animator))]
 public class Axe : MonoBehaviour
@@ -206,23 +207,21 @@ public class Axe : MonoBehaviour
     // Called when another object enters the trigger collider attached to the ammo gameobject
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Check that we have hit the box collider inside the enemy, and not it's circle collider
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision is BoxCollider2D)
         {
-            Debug.Log("Enemy hit!");
-
-            // Retrieve the player script from the enemy object
-            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
-
-            if (enemy != null)
+            // Check that we have hit the box collider inside the enemy, and not it's circle collider
+            if (collision.gameObject.CompareTag("Enemy"))
             {
+                Debug.Log("Enemy hit!");
+
+                // Retrieve the player script from the enemy object
+                Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+
                 Debug.Log("Enemy script found, starting damage coroutine.");
-                damageCoroutine ??= StartCoroutine(enemy.DamageCharacter(damageInflicted, 0.0f));
-            }
-            else
-            {
-                Debug.LogError("Enemy script not found on collided object!");
+                enemy.DamageCharacter(damageInflicted, 0.0f);
+                    // damageCoroutine ??= StartCoroutine(enemy.DamageCharacter(damageInflicted, 0.0f));
             }
         }
+        
     }
 }
