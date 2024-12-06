@@ -23786,6 +23786,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4015201103710683569, guid: 44c4471dad352554ba0634cafbbabe82, type: 3}
+      propertyPath: wanderSpeed
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4015201103710683569, guid: 44c4471dad352554ba0634cafbbabe82, type: 3}
+      propertyPath: followPlayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4015201103710683569, guid: 44c4471dad352554ba0634cafbbabe82, type: 3}
+      propertyPath: pursuitSpeed
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5340284536849249613, guid: 44c4471dad352554ba0634cafbbabe82, type: 3}
       propertyPath: m_Name
       value: Zombie
