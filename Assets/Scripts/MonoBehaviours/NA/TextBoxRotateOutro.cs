@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
 
-
-public class TextBoxRotateIntro : MonoBehaviour
+public class TextBoxRotateOutro : MonoBehaviour
 {
     // Reference to the TextMeshProUGUI component
     public TextMeshProUGUI textBox;
@@ -37,19 +36,15 @@ public class TextBoxRotateIntro : MonoBehaviour
 
     void Update()
     {
-        if (currentTextIndex > 9)
-        {
-            Devil_still.SetActive(true);
-        }
-        if (Input.GetKeyDown(KeyCode.Space) && currentTextIndex != 18)
+        // Cycle through text blocks
+        if (Input.GetKeyDown(KeyCode.Space) && currentTextIndex != 3)
         {
             currentTextIndex = (currentTextIndex + 1) % textBlocks.Length;
             textBox.text = textBlocks[currentTextIndex];
         }
         else if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene("Hell_1");   
+            Application.Quit();   
         }
     }
 }
-

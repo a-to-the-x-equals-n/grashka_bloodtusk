@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Testing.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: 033ce83421b59ab4dae19829fd8da3eb
+  - enabled: 1
     path: Assets/Scenes/Hell_1.unity
     guid: 06e19f4241119ab4c81df9ad796b187c
   - enabled: 1
@@ -16,9 +19,9 @@ EditorBuildSettings:
     guid: 9861131aef0c44d8b908e2e308dd1a05
   - enabled: 1
     path: Assets/Scenes/BossLevel_3.unity
-    guid: 58220949e9ddf1d41948ba01148bcd41
+    guid: b52a127848181bf4e865da45961a7779
   - enabled: 1
-    path: Assets/Scenes/Introduction.unity
+    path: Assets/Scenes/Outro.unity
     guid: 7f1277f60b37e21479a61280da9e634f
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
