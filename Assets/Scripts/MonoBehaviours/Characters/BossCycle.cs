@@ -7,6 +7,7 @@ public class BossCycle : MonoBehaviour
     // Time between attacks
     int attackTime = 0;
     bool spawn = true;
+    bool summon = false;
     CircleCollider2D circleCollider;
 
     // Speed at which the enemy pursues the player
@@ -81,7 +82,7 @@ public class BossCycle : MonoBehaviour
 
     protected void FixedUpdate()
     {
-        if (attackTime < 350)
+        if (attackTime < 700)
         {
             attackTime++;
         }
@@ -141,7 +142,7 @@ public class BossCycle : MonoBehaviour
         // Magnitude is a unity function to return the length of the vector
         float remainingDistance = (transform.position - endPosition).sqrMagnitude;
 
-        while (remainingDistance > float.Epsilon)
+        while (remainingDistance > float.Epsilon && !summon)
         {
             if (targetTransform != null)
             {
@@ -174,22 +175,45 @@ public class BossCycle : MonoBehaviour
                 // Update the distance remaining
                 remainingDistance = (transform.position - endPosition).sqrMagnitude;
             }
-            else if (attackTime > 200 && spawn)
+            else if (attackTime > 400 && spawn)
             {
+                summon = true;
+                break;
                 //Attack on time interval
-                animator.SetInteger(animationState, (int)CharStates.attack);
-                spawnZombie.SpawnObject();
-                spawnZombie.SpawnObject();
-                spawn = false;
+                
             }
 
             // Pause execution until the next Fixed Frame Update
             yield return new WaitForFixedUpdate();
         }
+        if (summon)
+        {
+            animator.SetBool("isWalking", false);
+            animator.SetBool("isAttacking", true);
+            animator.SetInteger(animationState, (int)CharStates.attack);
+            StartCoroutine(HandleZombieSpawn());
+            spawn = false;
+            summon = false;
+        }
 
         // Stop walking / idle
         animator.SetBool("isWalking", false);
+        animator.SetBool("isAttacking", false);
         animator.SetInteger(animationState, (int)CharStates.idleSouth);
+    }
+
+    private IEnumerator SummonAnimation()
+    {
+        
+        yield return null;
+    }
+
+    private IEnumerator HandleZombieSpawn()
+    {
+        spawnZombie.SpawnObject();
+        yield return new WaitForSeconds(0.5f);
+        spawnZombie.SpawnObject();
+        yield return null;
     }
 
     // Called when player enters the circle collider for the enemy
