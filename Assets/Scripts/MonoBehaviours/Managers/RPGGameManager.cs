@@ -37,7 +37,7 @@ public class RPGGameManager : MonoBehaviour
     void Update()
     {
         // to leave game outisde unity
-        if (Input.GetKey("Escape"))
+        if (Input.GetKey(KeyCode.Escape))
         {
             Application.Quit();
         }
