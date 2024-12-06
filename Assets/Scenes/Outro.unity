@@ -6660,7 +6660,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ' GAME OVER'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6746,45 +6746,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1730676573}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c22cc6bf442605b4fba80ed9c19d14e5, type: 3}
+  m_Script: {fileID: 11500000, guid: b2c0b61a80e5597499668f4471f2536a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textBox: {fileID: 1730676575}
+  textBox: {fileID: 0}
   textBlocks:
-  - "Princess Rikka: Ugh! Mom I\u2019m so bored. Tell me the story about how you
-    got your axe again! (Press space to continue)"
+  - "Princess Flay: Ugh! Mom I\u2019m so bored. Tell me the story about how you got
+    your axe again!"
   - "Queen Grashka: You would prefer boredom to war, my child. This peace is why
     I ventured for the axe in the first place\u2026"
-  - 'Princess Rikka: Pleeeeease!!!'
-  - 'Queen Grashka: It would serve you well to use manners, small one. As you know,
+  - 'Princess Flay: Pleeeeease!!!'
+  - 'Queen Grashka: It would serve you well to use manners, small one. As you know
     The Devil himself once roamed this realm like you and I, despite my warning him
     to stick to his own domain.'
-  - "Princess Rikka: Wow! You\u2019re so brave, you stood up to The Devil himself?!"
-  - 'Queen Grashka: Ha! He was far from impressive opposition. That mouse would have
-    been nothing without his armies! And much less without his fabled axe, the Jewel
-    of Hell.'
-  - "Princess Rikka: And you took both from him! He must have been mad\u2026"
-  - "Queen Grashka: A fly\u2019s tantrum, pathetic. After taking the axe, hell itself
-    froze over, and The devil shriveled like a raisin."
-  - "Princess Rikka: hahaha\u2026haha..... Mom? Do you have a blanket? I\u2019m getting
-    cold\u2026\u2026."
-  - "Queen Grashka: Cold? Wait\u2026 Rikka! Get behind m-"
-  - 'The Devil: I knew even a veteran like you would drop her guard eventually, a
-    consequence of a soft heart.'
-  - 'Queen Grashka: A soft heart? I recall you babbling like a newborn upon piteous
-    defeat.'
-  - 'The Devil: I discovered myself in the ice. There are magics unknown to all realms,
-    only possible to harness through deep introspection.'
-  - 'Queen Grashka: I am sure they are as paltry as your previous abilities. I will
-    take everything from you, like I did last time.'
-  - 'The Devil: I have nothing left to lose, you beast. But I am a humble, benevolent
-    deity. I would make a fair trade, my axe for your daughter.'
-  - 'Queen Grashka: Ha! negotiation with a rodent will yield but acorns! I will melt
-    the ice with your blood, you wretch!'
-  - "The Devil: So be it! I\u2019ll be returning to my domain, maybe the journey
-    will change your mind. I still have creatures loyal to me, even now."
-  - 'Queen Grashka: Then I will paint my path in their tears.'
-  Devil_still: {fileID: 955403645}
+  Devil_still: {fileID: 0}
 --- !u!1 &1797726733
 GameObject:
   m_ObjectHideFlags: 0

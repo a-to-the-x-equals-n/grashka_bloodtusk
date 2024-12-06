@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: -3844967290837185993}
   - component: {fileID: 6123383666704767608}
   - component: {fileID: 1409816435270293055}
-  - component: {fileID: 1706571923417186625}
   - component: {fileID: -7960591544803433123}
   - component: {fileID: 4658538402183438079}
   m_Layer: 8
@@ -252,22 +251,6 @@ MonoBehaviour:
   characterCategory: 1
   hitPoints: {fileID: 11400000, guid: 360ba24bc5bdc3d47af0c86dab733561, type: 2}
   damageStrength: 2
---- !u!114 &1706571923417186625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1078467729470143824}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bcaa13bd64891b448bb284f9b84581c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pursuitSpeed: 3
-  wanderSpeed: 2
-  directionChangeInterval: 3
-  followPlayer: 1
 --- !u!114 &-7960591544803433123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,7 +263,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 672742ef0a38f1642bad45782fc5f731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  pursuitSpeed: 3
+  wanderSpeed: 2
+  directionChangeInterval: 1
+  followPlayer: 1
 --- !u!114 &4658538402183438079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,7 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2446ec1ca0bd93f48b3cb82cffb7b1f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowPrefab: {fileID: 1632364341111066663, guid: d41bc02218149a445bb615f44c34d3b8, type: 3}
+  arrowPrefab: {fileID: 2050583209033892734, guid: afa96c2b9d0ac44478543661965b413e, type: 3}
   arrowVelocity: 1
   target: {fileID: 0}
   fireInterval: 2
