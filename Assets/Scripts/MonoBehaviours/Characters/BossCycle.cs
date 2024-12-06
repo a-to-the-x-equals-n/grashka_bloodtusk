@@ -141,12 +141,9 @@ public class BossCycle : MonoBehaviour
         {
             if (targetTransform != null)
             {
-                // If targetTransform is set, calculate the direction away from the player
-                Vector3 directionAwayFromPlayer = transform.position - targetTransform.position;
-                
-                // Optionally, you can multiply by a distance factor to control how far away you want the object to move
-                float distanceAway = 5f; // Example distance, adjust as needed
-                endPosition = transform.position + directionAwayFromPlayer.normalized * distanceAway;
+                // If targeTransform is set, then it's postion is the player's position
+                // This moves the enemy toward the player instead of toward the original endPosition
+                endPosition = targetTransform.position;
             }
             
             if (rigidBodyToMove != null && attackTime < 200)

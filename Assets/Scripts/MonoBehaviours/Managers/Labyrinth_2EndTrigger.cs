@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Labyrinth_2EndTrigger : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class Labyrinth_2EndTrigger : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            FindAnyObjectByType<SceneLoader>().LoadScenebyName("Boss Level_3");
+            SceneManager.LoadScene("BossLevel_3");
         }
     }
 }

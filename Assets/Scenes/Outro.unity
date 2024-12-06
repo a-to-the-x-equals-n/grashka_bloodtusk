@@ -6749,16 +6749,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c0b61a80e5597499668f4471f2536a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textBox: {fileID: 0}
+  textBox: {fileID: 1730676575}
   textBlocks:
-  - "Princess Flay: Ugh! Mom I\u2019m so bored. Tell me the story about how you got
-    your axe again!"
-  - "Queen Grashka: You would prefer boredom to war, my child. This peace is why
-    I ventured for the axe in the first place\u2026"
-  - 'Princess Flay: Pleeeeease!!!'
-  - 'Queen Grashka: It would serve you well to use manners, small one. As you know
-    The Devil himself once roamed this realm like you and I, despite my warning him
-    to stick to his own domain.'
+  - 'Princess Rikka: Mom! Is it over?'
+  - 'Queen Grashka: Yes, child. I finished the job, like I should have done last
+    time. Now you are truly safe. Let us go home, unless this excitement has fallen
+    short of quenching your boredom.'
+  - "Princess Rikka: Ugh\u2026 no mom. You were right, I miss being bored\u2026"
+  - THE END
   Devil_still: {fileID: 0}
 --- !u!1 &1797726733
 GameObject:

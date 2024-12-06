@@ -12,10 +12,10 @@ public class TextBoxRotateOutro : MonoBehaviour
    
     // Array of strings for different lines
     public string[] textBlocks = new string[] {
-        "Princess Flay: Ugh! Mom I’m so bored. Tell me the story about how you got your axe again!",
-        "Queen Grashka: You would prefer boredom to war, my child. This peace is why I ventured for the axe in the first place…",
-        "Princess Flay: Pleeeeease!!!",
-        "Queen Grashka: It would serve you well to use manners, small one. As you know The Devil himself once roamed this realm like you and I, despite my warning him to stick to his own domain."
+        "Princess Rikka: Mom! Is it over?",
+        "Queen Grashka: Yes, child. I finished the job, like I should have done last time. Now you are truly safe. Let us go home, unless this excitement has fallen short of quenching your boredom.",
+        "Princess Rikka: Ugh… no mom. You were right, I miss being bored…",
+        "THE END"
     };
 
 

@@ -219,7 +219,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 4
 --- !u!114 &6123383666704767608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,8 +246,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c2e3ee1d9d11f46898a3820192334c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitPoints: 20
-  startingHitPoints: 20
+  maxHitPoints: 25
+  startingHitPoints: 25
   characterCategory: 1
   damageStrength: 2
 --- !u!114 &-7960591544803433123
