@@ -218,7 +218,7 @@ public class Axe : MonoBehaviour
                 Enemy enemy = collision.gameObject.GetComponent<Enemy>();
 
                 Debug.Log("Enemy script found, starting damage coroutine.");
-                enemy.DamageCharacter(damageInflicted, 0.0f);
+                StartCoroutine(enemy.DamageCharacter(damageInflicted, 0.0f));
                     // damageCoroutine ??= StartCoroutine(enemy.DamageCharacter(damageInflicted, 0.0f));
             }
         }
