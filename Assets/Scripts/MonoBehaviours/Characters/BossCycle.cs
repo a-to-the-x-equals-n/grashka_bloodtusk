@@ -150,8 +150,7 @@ public class BossCycle : MonoBehaviour
                 // This moves the enemy toward the player instead of toward the original endPosition
                 endPosition = targetTransform.position;
             }
-            
-            if (rigidBodyToMove != null && attackTime < 200)
+            if (rigidBodyToMove != null)
             {
                 // Set animation parameter so animator will change the anumations that's played
                 animator.SetBool("isWalking", true);
@@ -175,35 +174,32 @@ public class BossCycle : MonoBehaviour
                 // Update the distance remaining
                 remainingDistance = (transform.position - endPosition).sqrMagnitude;
             }
-            else if (attackTime > 400 && spawn)
+            if (attackTime > 400 && spawn)
             {
                 summon = true;
                 break;
                 //Attack on time interval
-                
             }
-
+            
             // Pause execution until the next Fixed Frame Update
             yield return new WaitForFixedUpdate();
         }
         if (summon)
         {
-            animator.SetBool("isWalking", false);
-            animator.SetBool("isAttacking", true);
-            animator.SetInteger(animationState, (int)CharStates.attack);
-            StartCoroutine(HandleZombieSpawn());
-            spawn = false;
-            summon = false;
+            StartCoroutine(SummonAnimation());
         }
-
         // Stop walking / idle
         animator.SetBool("isWalking", false);
-        animator.SetBool("isAttacking", false);
         animator.SetInteger(animationState, (int)CharStates.idleSouth);
     }
 
     private IEnumerator SummonAnimation()
     {
+        animator.SetInteger(animationState, (int)CharStates.attack);
+        animator.SetBool("isAttacking", true);
+        StartCoroutine(HandleZombieSpawn());
+        spawn = false;
+        summon = false;
         
         yield return null;
     }
@@ -211,7 +207,7 @@ public class BossCycle : MonoBehaviour
     private IEnumerator HandleZombieSpawn()
     {
         spawnZombie.SpawnObject();
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.8f);
         spawnZombie.SpawnObject();
         yield return null;
     }

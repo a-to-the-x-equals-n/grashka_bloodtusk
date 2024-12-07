@@ -34,15 +34,12 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: AnimationState
-    m_EventTreshold: 4
   - m_ConditionMode: 1
     m_ConditionEvent: isWalking
     m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: IsAttacking
-    m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: AnimationState
+    m_EventTreshold: 4
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8605237984777729440}
   m_Solo: 0
@@ -74,13 +71,13 @@ AnimatorStateMachine:
     m_Position: {x: -130, y: 100, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7931026380055235485}
-    m_Position: {x: 380, y: 100, z: 0}
+    m_Position: {x: 560, y: 110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8605237984777729440}
     m_Position: {x: 120, y: -50, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4624107945038147430}
-    m_Position: {x: 350, y: 220, z: 0}
+    m_Position: {x: 400, y: 210, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6409259099996437577}
     m_Position: {x: 410, y: -20, z: 0}
@@ -108,7 +105,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: BossIdle 0
-  m_Speed: 0.01
+  m_Speed: 0.05
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -140,9 +137,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: AnimationState
     m_EventTreshold: 5
-  - m_ConditionMode: 2
-    m_ConditionEvent: IsAttacking
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4624107945038147430}
   m_Solo: 0
@@ -197,9 +191,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: AnimationState
     m_EventTreshold: 2
-  - m_ConditionMode: 2
-    m_ConditionEvent: IsAttacking
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3082100854668330981}
   m_Solo: 0
@@ -288,7 +279,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: BossAttack
-  m_Speed: 0.4
+  m_Speed: 0.3
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -300,7 +291,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: ed85d4c6ae259384e8fbb8c0d6f91cf7, type: 2}
+  m_Motion: {fileID: 7400000, guid: 04ef550dad9df994098f4d6d31aae37f, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -319,9 +310,6 @@ AnimatorStateTransition:
     m_EventTreshold: 1
   - m_ConditionMode: 1
     m_ConditionEvent: isWalking
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: IsAttacking
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7931026380055235485}
@@ -345,15 +333,12 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: AnimationState
-    m_EventTreshold: 3
   - m_ConditionMode: 1
     m_ConditionEvent: isWalking
     m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: IsAttacking
-    m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: AnimationState
+    m_EventTreshold: 3
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1460464494986498162}
   m_Solo: 0
@@ -379,9 +364,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: AnimationState
     m_EventTreshold: 6
-  - m_ConditionMode: 2
-    m_ConditionEvent: isWalking
-    m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: IsAttacking
     m_EventTreshold: 0
@@ -394,9 +376,9 @@ AnimatorStateTransition:
   m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_ExitTime: 1
-  m_HasExitTime: 1
+  m_HasExitTime: 0
   m_HasFixedDuration: 0
-  m_InterruptionSource: 0
+  m_InterruptionSource: 2
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 0
 --- !u!1102 &8605237984777729440
