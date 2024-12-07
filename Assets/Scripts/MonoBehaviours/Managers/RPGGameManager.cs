@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement; // Include for scene management
 
 public class RPGGameManager : MonoBehaviour
 {
@@ -6,15 +7,13 @@ public class RPGGameManager : MonoBehaviour
     public RPGCameraManager cameraManager;
 
     // Reference to the spawn point designed for the player
-    // Needed so the player can be re-spawn when they die
+    // Needed so the player can be re-spawned when they die
     public SpawnPoint playerSpawnPoint;
 
     // A variable used to access the singleton object
     public static RPGGameManager sharedInstance = null;
 
-    // Ensure only a single isntance of the RPGGameManager exists
-    // It's possibel to get multiple instances if multiple copies of the RPGGameManager exists in the Hierarchy
-    // or if multiple copies are programmatically instantiated
+    // Ensure only a single instance of the RPGGameManager exists
     public void Awake()
     {
         if (sharedInstance != null && sharedInstance != this)
@@ -36,13 +35,17 @@ public class RPGGameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // to leave game outisde unity
+        // Exit the game when Escape key is pressed
         if (Input.GetKey(KeyCode.Escape))
         {
             Application.Quit();
         }
 
-        
+        // Restart the game and load "Hell_1" when the Enter key is pressed
+        if (Input.GetKeyDown(KeyCode.Return)) // Use KeyCode.Return for the Enter key
+        {
+            SceneManager.LoadScene("Hell_1");
+        }
     }
 
     public void SetupScene()
