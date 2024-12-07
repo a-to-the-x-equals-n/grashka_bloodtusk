@@ -82,7 +82,7 @@ public class BossCycle : MonoBehaviour
 
     protected void FixedUpdate()
     {
-        if (attackTime < 250)
+        if (attackTime < 450)
         {
             attackTime++;
         }
@@ -150,7 +150,7 @@ public class BossCycle : MonoBehaviour
                 // This moves the enemy toward the player instead of toward the original endPosition
                 endPosition = targetTransform.position;
             }
-            if (rigidBodyToMove != null)
+            if (rigidBodyToMove != null && attackTime < 250)
             {
                 // Set animation parameter so animator will change the anumations that's played
                 animator.SetBool("isWalking", true);
@@ -174,13 +174,17 @@ public class BossCycle : MonoBehaviour
                 // Update the distance remaining
                 remainingDistance = (transform.position - endPosition).sqrMagnitude;
             }
-            if (attackTime == 250 && spawn)
+            else if (attackTime == 250 && spawn)
             {
                 StartCoroutine(HandleZombieSpawn());
-                animator.SetInteger(animationState, (int)CharStates.attack);
-                animator.SetBool("isAttacking", true);
+                //animator.SetInteger(animationState, (int)CharStates.attack);
 
             }
+            else if (attackTime > 250)
+            {
+                animator.SetInteger(animationState, (int)CharStates.attack);
+            }
+            
             
             // Pause execution until the next Fixed Frame Update
             yield return new WaitForFixedUpdate();
