@@ -82,7 +82,7 @@ public class BossCycle : MonoBehaviour
 
     protected void FixedUpdate()
     {
-        if (attackTime < 700)
+        if (attackTime < 250)
         {
             attackTime++;
         }
@@ -174,34 +174,20 @@ public class BossCycle : MonoBehaviour
                 // Update the distance remaining
                 remainingDistance = (transform.position - endPosition).sqrMagnitude;
             }
-            if (attackTime > 400 && spawn)
+            if (attackTime == 250 && spawn)
             {
-                summon = true;
-                break;
-                //Attack on time interval
+                StartCoroutine(HandleZombieSpawn());
+                animator.SetInteger(animationState, (int)CharStates.attack);
+                animator.SetBool("isAttacking", true);
+
             }
             
             // Pause execution until the next Fixed Frame Update
             yield return new WaitForFixedUpdate();
         }
-        if (summon)
-        {
-            StartCoroutine(SummonAnimation());
-        }
-        // Stop walking / idle
+
         animator.SetBool("isWalking", false);
         animator.SetInteger(animationState, (int)CharStates.idleSouth);
-    }
-
-    private IEnumerator SummonAnimation()
-    {
-        animator.SetInteger(animationState, (int)CharStates.attack);
-        animator.SetBool("isAttacking", true);
-        StartCoroutine(HandleZombieSpawn());
-        spawn = false;
-        summon = false;
-        
-        yield return null;
     }
 
     private IEnumerator HandleZombieSpawn()
@@ -209,6 +195,7 @@ public class BossCycle : MonoBehaviour
         spawnZombie.SpawnObject();
         yield return new WaitForSeconds(0.8f);
         spawnZombie.SpawnObject();
+        spawn = false;
         yield return null;
     }
 
